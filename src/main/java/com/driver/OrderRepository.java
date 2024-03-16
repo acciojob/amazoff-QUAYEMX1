@@ -174,7 +174,7 @@ public class OrderRepository {
         for(String orderid:hs){
             Order order=orderMap.get(orderid);
 
-            if(orderid!=null && gt>order.getDeliveryTime()){
+            if(orderid!=null && gt<order.getDeliveryTime()){
                 ans++;
             }
         }
