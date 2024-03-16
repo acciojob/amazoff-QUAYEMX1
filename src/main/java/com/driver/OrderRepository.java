@@ -28,15 +28,7 @@ public class OrderRepository {
 
     }
 
-    public void savePartner(String partnerId){
-        // your code here
-        // create a new partner with given partnerId and save it
-        DeliveryPartner partner=new DeliveryPartner(partnerId);
-        partnerMap.put(partnerId,partner);
-
-        partnerToOrderMap.put(partnerId,new HashSet<String>());
-
-    }
+   git add
 
     public void saveOrderPartnerMap(String orderId, String partnerId){
 
@@ -50,7 +42,7 @@ public class OrderRepository {
 
            DeliveryPartner dp=partnerMap.get(partnerId);
            dp.setNumberOfOrders(dp.getNumberOfOrders()+1);
-
+            partnerMap.put(partnerId,dp);
             partnerToOrderMap.get(partnerId).add(orderId);
 
         }
