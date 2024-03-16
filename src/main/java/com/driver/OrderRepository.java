@@ -110,7 +110,7 @@ public class OrderRepository {
         return ans;
     }
 
-    public void deletePartner(String partnerId){
+    public void deletePartner(String partnerId) {
         // your code here
         // delete partner by ID
 
@@ -122,10 +122,9 @@ public class OrderRepository {
             partnerMap.remove(partnerId);
 
             for(String v:orderToPartnerMap.keySet()){
-                if(orderToPartnerMap.get(v)==partnerId){
-
+                if(orderToPartnerMap.get(v).equals(partnerId)){
                     orderToPartnerMap.remove(v);
-                    break;
+//                    break;
                 }
             }
             partnerToOrderMap.remove(partnerId);
