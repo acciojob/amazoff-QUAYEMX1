@@ -28,8 +28,6 @@ public class OrderRepository {
 
     }
 
-   git add
-
     public void saveOrderPartnerMap(String orderId, String partnerId){
 
         if(orderMap.containsKey(orderId) && partnerMap.containsKey(partnerId)){
