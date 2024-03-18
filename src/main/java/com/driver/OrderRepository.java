@@ -24,8 +24,14 @@ public class OrderRepository {
 
         String id=order.getId();
         orderMap.put(id,order);
-
-
+    }
+    public void savePartner(String partnerId){
+        // your code here
+        // create a new partner with given partnerId and save it
+        if (partnerId != null) {
+            DeliveryPartner deliveryPartner = new DeliveryPartner(partnerId);
+            partnerMap.put(partnerId, deliveryPartner);
+        }
     }
 
     public void saveOrderPartnerMap(String orderId, String partnerId){
@@ -40,7 +46,7 @@ public class OrderRepository {
 
            DeliveryPartner dp=partnerMap.get(partnerId);
            dp.setNumberOfOrders(dp.getNumberOfOrders()+1);
-            partnerMap.put(partnerId,dp);
+//            partnerMap.put(partnerId,dp);
             partnerToOrderMap.get(partnerId).add(orderId);
 
         }
@@ -105,9 +111,6 @@ public class OrderRepository {
         // delete partner by ID
 
         if(partnerMap.containsKey(partnerId)){
-
-//            DeliveryPartner dp=partnerMap.get(partnerId);
-//            dp.setNumberOfOrders(dp.getNumberOfOrders()-1);
 
             partnerMap.remove(partnerId);
 
