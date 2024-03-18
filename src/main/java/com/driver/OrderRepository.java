@@ -31,6 +31,8 @@ public class OrderRepository {
         if (partnerId != null) {
             DeliveryPartner deliveryPartner = new DeliveryPartner(partnerId);
             partnerMap.put(partnerId, deliveryPartner);
+
+            partnerToOrderMap.put(partnerId,new HashSet<>());
         }
     }
 
